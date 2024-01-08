@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+      meta(charset='utf-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1')
+      title Best Platform for Onlne School Mangement | GyanMandir 
+block scripts
+    script(src="/static/login.js")
+
+block style 
+    style 
+        include ../static/login.css
+
+block content
+    div#main-section 
+        div.image-container
+            div#image1
+                a(href="/") 
+                    img(src="/static/photos/logo.jpeg", alt="Gyanmandir")
+            div#image3 
+                p World's first fully integrated SaaS-based mixed learning platform
+                img(src="/static/photos/picture20.png", alt="NextEra")
+        div#login-container    
+            div#container 
+                div#login-matter
+                    p#span.msg #{message}
+                    button.nbtn(onclick='changeform1()') School 
+                    button.nbtn(onclick='changeform2()')  Teacher 
+                    button.nbtn(onclick='changeform3()')  Student 
+                    form#form1(action="/login", method="post") 
+                        p.msg this is only for schools admin
+                        h3 School Login
+                        label.form Email 
+                            input(type="email", name="email",autocomplete="on")
+                        label.form Password
+                            input(type="password", name="password")
+                        label.form School code  
+                            input(type="text", name="schoolcode")
+                        input.final(type="submit",value="Sign In")
+                        p.form Forget Password 
+                            a(href="/forget") Reset Password
+                        p.form Dont have account
+                            a(href="/signup") Sign Up
+                        p.form Login as admin
+                            a(href="/admin/login") Admin
+                    
+                    form#form2(action="/teacherlogin", method="post")
+                        h3 Teacher Login 
+                        label.form Email 
+                            input(type="email", name="email",autocomplete='on')
+                        label.form Password
+                            input(type="password", name="password")
+                        label.form School code  
+                            input(type="text", name="schoolcode")
+                        input.final(type="submit",value="Sign In")
+                        p.form Forget Password 
+                            a(href="/teacherforget") Reset Password
+                    
+                    form#form3(action="/studentlogin", method="post") 
+                        h3 Student Login
+                        label.form Email 
+                            input(type="email", name="email",autocomplete='on')
+                        label.form Password
+                            input(type="password", name="password")
+                        label.form School code  
+                            input(type="text", name="schoolcode")
+                        input.final(type="submit",value="Sign In")
+                        p.form Forget Password 
+                            a(href="/studentforget") Reset Password 
+                    
+
+
+block foot
+    div#footer
+        | Copyright © 2023 GyanMandir.com | All rights reserved

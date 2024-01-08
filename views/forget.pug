@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+      meta(charset='utf-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1')
+      title Best Platform for Onlne School Mangement | GyanMandir 
+block scripts
+    script(src="/static/Loginindex.js")
+
+block style 
+    style 
+        include ../static/forget.css
+
+block content
+    div#main-section 
+        div.image-container
+            div#image1
+                a(href="/") 
+                    img(src="/static/photos/logo.jpeg", alt="Gyanmandir")
+            div#image3 
+                p World's first fully integrated SaaS-based mixed learning platform
+                img(src="/static/photos/picture20.png", alt="NextEra")
+        div#login-container    
+            div#container
+                div#login-matter
+                    p#span.msg #{message}
+                    h3 Reset Password 
+                    form(action="", method="post") 
+                        label.form Email 
+                            input.padding(type="text", name="email")
+                        label.form School code  
+                            input.padding(type="text", name="schoolcode")
+                        input.final(type="submit",value="Reset Password") 
+
+
+block foot
+    div#footer
+        | Copyright © 2023 GyanMandir.com | All rights reserved

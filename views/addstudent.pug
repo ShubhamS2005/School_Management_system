@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+      meta(charset='utf-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1')
+      title Best Platform for Onlne School Mangement | GyanMandir 
+block scripts
+    script(src="/static/Loginindex.js")
+
+block style 
+    style 
+        include ../static/updateuserStyle.css
+
+
+block content
+    div#main-section 
+        div.image-container
+            div#image1
+                a(href="/") 
+                    img(src="/static/photos/logo.jpeg", alt="Gyanmandir")
+            div#image3 
+                p World's first fully integrated SaaS-based mixed learning platform
+                img(src="/static/photos/picture20.png", alt="NextEra")
+        div#login-container    
+            div#container 
+                div#login-matter
+                    p#span.msg #{message}
+                    h3 Create Student 
+                    form(action="", method="post") 
+                        label.form School Name 
+                            input.padding(type="text", name="schoolname",value=school.schoolname) 
+                            input.padding(type="hidden", name="user_id",value=school._id)
+                        label.form School Code 
+                            input.padding(type="text", name="schoolcode",value=school.schoolcode) 
+                        label.form Email 
+                            input.padding(type="text", name="email")
+                        label.form Class 
+                            input.padding(type="text", name="class")
+                        label.form Section 
+                            input.padding(type="text", name="section")
+                        label.form Phone number   
+                            input.padding(type="text", name="phone")
+                        label.form Admission Number 
+                            input.padding(type="text", name="admission_no")
+                        label.form Roll Number 
+                            input.padding(type="text", name="roll_no")
+                        label.form Name    
+                            input.padding(type="text", name="name")    
+                        input.final(type="submit",value="add student")
+                    
+                    
+                    
+
+
+block foot
+    div#footer
+        | Copyright © 2023 GyanMandir.com | All rights reserved

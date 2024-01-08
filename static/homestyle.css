@@ -1,0 +1,86 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Main-Section Styling */
+#Main-section{
+    height: auto;
+    background-color: rgb(191 168 66 / 99%);
+}
+#navbar ul{
+    display: flex;
+    justify-content: center;
+} 
+#Main-section ul li{
+    list-style: none;
+    cursor: pointer;
+    padding: 5px 21px ;
+    margin: 1px 12px;
+}
+#Main-section ul li a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+#Main-section ul li a:hover{
+    font-size: 1.4rem;
+    color: aqua;
+    background-color:blue;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3px 10px;
+}
+#para{
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    padding: 2px 2px;
+    font-style: italic;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#btn1 {
+    position: fixed;
+    top: 5px;
+    right: 10px;
+}
+#para span{
+    color: #c50677;
+}
+
+/* Utitility Clases */
+
+.imp{
+    font-weight: 600;
+}
+.btn{
+    cursor: pointer;
+    list-style: none;
+    color: black;
+    background-color: rgba(0, 132, 255, 0.562);
+    margin: 8px 4px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.btn a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 9px 10px;
+    display: block;
+    color: white;
+    
+}
+
+.btn:hover{
+    background-color: rgb(155, 155, 19);
+}
