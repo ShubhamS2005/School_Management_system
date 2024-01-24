@@ -13,14 +13,14 @@ block style
 
 block content
     div#main-section 
-        div.image-container
+        div#image3 
+            p World's first fully integrated mixed learning platform            
+            div.image-container
+                
+        div#login-container    
             div#image1
                 a(href="/") 
                     img(src="/static/photos/logo.jpeg", alt="Gyanmandir")
-            div#image3 
-                p World's first fully integrated SaaS-based mixed learning platform
-                img(src="/static/photos/picture20.png", alt="NextEra")
-        div#login-container    
             div#container 
                 div#login-matter
                     p#span.msg #{message}
@@ -41,9 +41,6 @@ block content
                             a(href="/forget") Reset Password
                         p.form Dont have account
                             a(href="/signup") Sign Up
-                        p.form Login as admin
-                            a(href="/admin/login") Admin
-                    
                     form#form2(action="/teacherlogin", method="post")
                         h3 Teacher Login 
                         label.form Email 
@@ -55,7 +52,6 @@ block content
                         input.final(type="submit",value="Sign In")
                         p.form Forget Password 
                             a(href="/teacherforget") Reset Password
-                    
                     form#form3(action="/studentlogin", method="post") 
                         h3 Student Login
                         label.form Email 
@@ -67,7 +63,6 @@ block content
                         input.final(type="submit",value="Sign In")
                         p.form Forget Password 
                             a(href="/studentforget") Reset Password 
-                    
 
 
 block foot

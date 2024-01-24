@@ -14,11 +14,12 @@ school_route.use(session({secret:config.sessionSecret}));
 // Controllers Connected
 
 const schoolController=require("../controllers/schoolcontroller");
+const teacherController=require("../controllers/teachercontroller");
 
 // Middleware Connected
 const auth=require('../middleware/auth')
 
-// school 
+// School 
 // get Requests
 school_route.get('/signup',auth.islogout,schoolController.loadregister);
 school_route.get('/verify',auth.islogout,schoolController.verifymail);
@@ -47,6 +48,13 @@ school_route.get('/newstudentlist',auth.islogin,schoolController.showstudents);
 
 school_route.post('/newstudent',schoolController.insertstudent); 
 
+// Teacher
+// get requests
+school_route.get('/teacher',auth.isteacherlogin,teacherController.loadteacher);
+school_route.get('/teacherlogout',auth.isteacherlogin,auth.islogin,teacherController.teacherlogout);
+
+// post requests 
+school_route.post('/teacherlogin',teacherController.teacherlogin);
 
 // export
 module.exports=school_route;
