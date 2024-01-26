@@ -5,27 +5,37 @@ html(lang="en")
       meta(name='viewport' content='width=device-width, initial-scale=1')
       title Best Platform for Onlne School Mangement | GyanMandir 
 block scripts
-    script(src="/static/indexDashboard.js")
 
 block style 
     style  
         include ../static/teacher.css
 
 block content
-    button#btn.btn  
-        li #[a(href='/teacherlogout') Logout ]
+    nav#navbar
+        ul
+            li 
+                img(src="/static/photos/school_building.png", alt="school")
+            li 
+                h3 #{teacher.schoolname}
+        div#side-bar
+            ul
+                li Session: #{teacher.session_start}-#{teacher.session_end}
+                li #[a(href='/setting') Settings]
+                li #[a(href='/teacherlogout') Logout ]
     
-    h1 Welcome #{teacher.name} 
+    section#first-section 
+        p Teacher Dashboard     
+
     div#container
-        div.mater-card
-            h3 Teacher Attendence
-            p Attendence maintaining is important as it help in smooth functioning of school teaching process to check your attendence click below. 
-            li #[a(href='/teacherattendence') Teacher Attendence ]
-                
         div.mater-card
             h3 Live Class 
             p In this modern era Online classes is the key to functing of a good school for this click on below link to start a live class.
             li #[a(href='/liveclasslist') Live Class]
+
+        div.mater-card
+            h3 Teacher Attendence
+            p Attendence maintaining is important as it help in smooth functioning of school teaching process to check your attendence click below. 
+            li #[a(href='/teacherattendence') Teacher Attendence ]
                 
         div.mater-card
             h3 Online Resources
@@ -38,15 +48,15 @@ block content
             li #[a(href='/studentattendence') Student Attendence ]
 
 
-        div.mater-card
-            h3 Salary Check 
-            p To check your salary slip and payment due click on below link 
-            li #[a(href='/salarycheck') Salary Check ] 
+        //- div.mater-card
+        //-     h3 Salary Check 
+        //-     p To check your salary slip and payment due click on below link 
+        //-     li #[a(href='/salarycheck') Salary Check ] 
 
-        div.mater-card
-            h3 Give Assingments 
-            p Giving Assingments help students in learning things more effectivly and revising old topics eaisly Click below to give assignment
-            li #[a(href='/assingment') New Assingment ] 
+        //- div.mater-card
+        //-     h3 Give Assingments 
+        //-     p Giving Assingments help students in learning things more effectivly and revising old topics eaisly Click below to give assignment
+        //-     li #[a(href='/assingment') New Assingment ] 
 
 block foot
     div#footer

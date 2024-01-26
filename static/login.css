@@ -23,7 +23,7 @@ html {
 }
 
 #image1 img{
-    height: 86px;
+    height: 96px;
 }
 #login-container{
     display: flex;
@@ -32,7 +32,10 @@ html {
     flex-direction: column;
 }
 #login-container h3{
-    font-size: 1.7rem;
+    font-size: 1.9rem;
+}
+input{
+    padding: 3px;
 }
 #image3 {
     display: flex;
@@ -56,8 +59,10 @@ html {
     text-align: center; 
     background-color: transparent;
     margin: 2rem 5rem;
+    margin-top: 1rem;
     box-shadow: 19px 16px 19px 14px grey;
     height: 30rem;
+    width: 27rem;
 }
 
 .form{
@@ -93,7 +98,7 @@ html {
     margin: 8px 4px;
     border: 2px solid black;
     border-radius: 20px;
-    padding: 5px 6px;
+    padding:0.7rem ;
 }
 
 .nbtn a{

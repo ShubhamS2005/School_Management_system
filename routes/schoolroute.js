@@ -51,10 +51,16 @@ school_route.post('/newstudent',schoolController.insertstudent);
 // Teacher
 // get requests
 school_route.get('/teacher',auth.isteacherlogin,teacherController.loadteacher);
+school_route.get('/Forget-passwordteacher',auth.isteacherlogout,teacherController.forgetpasswordload);
+school_route.get('/teacherforget',teacherController.loadforget);
 school_route.get('/teacherlogout',auth.isteacherlogin,auth.islogin,teacherController.teacherlogout);
+school_route.get('/liveclasslist',auth.isteacherlogin,teacherController.loadliveclass);
+
 
 // post requests 
 school_route.post('/teacherlogin',teacherController.teacherlogin);
+school_route.post('/teacherforget',teacherController.verifyforget);
+school_route.post('/Forget-passwordteacher',teacherController.resetpassword);
 
 // export
 module.exports=school_route;

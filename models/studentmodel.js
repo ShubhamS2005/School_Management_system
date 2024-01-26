@@ -44,6 +44,14 @@ const studentScheema = new mongoose.Schema({
     password:{
         type: String,
     },
+    session_start:{
+        type: String,
+        requied:true
+    },
+    session_end:{
+        type: String,
+        requied:true
+    },
     is_admin: {
         type: Number,
         required: true
