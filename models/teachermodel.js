@@ -25,6 +25,14 @@ const teacherScheema = new mongoose.Schema({
         type: String,
         required: true
     },
+    session_start:{
+        type: String,
+        requied:true
+    },
+    session_end:{
+        type: String,
+        requied:true
+    },
     phone: {
         type: String,
         required: true

@@ -311,7 +311,9 @@ const insertteacher=async(req,res)=>{
             schoolcode:userdata.schoolcode,
             password:spassword,
             schoolid:userdata._id,
-            subject:req.body.subject,
+            subject:req.body.subject, 
+            session_start:req.body.start,
+            session_end:req.body.end,
             is_admin:0,
             is_verified:1
         })
@@ -401,6 +403,8 @@ const insertstudent=async(req,res)=>{
             schoolid:userdata._id,
             section:req.body.section,
             admission_no:req.body.admission_no,
+            session_start:req.body.start,
+            session_end:req.body.end,
             Roll_No:req.body.roll_no,
             is_admin:0,
             is_verified:1

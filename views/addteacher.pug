@@ -5,7 +5,7 @@ html(lang="en")
       meta(name='viewport' content='width=device-width, initial-scale=1')
       title Best Platform for Onlne School Mangement | GyanMandir 
 block scripts
-    script(src="/static/Loginindex.js")
+    script(src="/static/login.js")
 
 block style 
     style 
@@ -40,6 +40,10 @@ block content
                             input.padding(type="password", name="password")
                         label.form Name    
                             input.padding(type="text", name="name")    
+                        label.form Session Start 
+                            input.padding(type="text", name="session_start")
+                        label.form Session End
+                            input.padding(type="text", name="session_end")
                         label.form Subject    
                             input.padding(type="text", name="subject")                      
                         

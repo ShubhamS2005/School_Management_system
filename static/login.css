@@ -13,14 +13,17 @@ html {
     display: flex;
     background-color: #AEC3E1;
 }
-
-#image1,#image2 {
+.image-container{
+    background:url("../static/photos/picture20.png") no-repeat center center/cover;
+    height: 100%;
+}
+#image1{
     display: flex;  
     justify-content: center;
 }
 
-#image1 img,#image2 img{
-    height: 86px;
+#image1 img{
+    height: 96px;
 }
 #login-container{
     display: flex;
@@ -29,7 +32,10 @@ html {
     flex-direction: column;
 }
 #login-container h3{
-    font-size: 1.7rem;
+    font-size: 1.9rem;
+}
+input{
+    padding: 3px;
 }
 #image3 {
     display: flex;
@@ -37,14 +43,12 @@ html {
     align-items: center;
     flex-direction: column;
 }
-#image3 img{
-    height: 460px;
-}
 .image-container{
-    width: 60%;
+    width: 100%;
 }
 #image3 p {
     padding: 14px 8px;
+    margin: 1.5rem;
     font-size: 1.3rem;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 600;
@@ -54,8 +58,11 @@ html {
     flex-direction: column;
     text-align: center; 
     background-color: transparent;
-    margin: 30px 80px;
+    margin: 2rem 5rem;
+    margin-top: 1rem;
     box-shadow: 19px 16px 19px 14px grey;
+    height: 30rem;
+    width: 27rem;
 }
 
 .form{
@@ -64,7 +71,7 @@ html {
     margin-bottom: 6px;
     font-family:Arial, Helvetica, sans-serif;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 1.5rem;
 }
 
 .final{
@@ -91,7 +98,7 @@ html {
     margin: 8px 4px;
     border: 2px solid black;
     border-radius: 20px;
-    padding: 5px 6px;
+    padding:0.7rem ;
 }
 
 .nbtn a{
@@ -117,3 +124,22 @@ html {
     height: auto;
     font-family: 'Kanit', sans-serif;
 }
+/* using */
+/* #container {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    background-color: transparent;
+    margin: 2rem 5rem;
+    box-shadow: 19px 16px 19px 14px grey;
+    height: 30rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;
+    font-family:Arial, Helvetica, sans-serif;
+    align-items: center;
+    margin-top: 1.5rem;
+} */
