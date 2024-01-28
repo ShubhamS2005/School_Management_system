@@ -1,6 +1,7 @@
 const School=require('../models/schoolmodel');
 const Teacher=require('../models/teachermodel');
 const Student=require('../models/studentmodel');
+const Class=require('../models/classmodel');
 const bcrypt=require('bcrypt');
 const nodemailer=require('nodemailer');
 const Randomstring=require('randomstring');
@@ -22,6 +23,7 @@ const teacherlogin=async(req,res)=>{
         const password=req.body.password;
         const schoolcode=req.body.schoolcode;
         const teacherdata=await Teacher.findOne({email:email});
+
         if(teacherdata){
             const passwordmatch=await bcrypt.compare(password,teacherdata.password);
             if(passwordmatch){
@@ -161,11 +163,38 @@ const resetpassword=async(req,res)=>{
 const loadliveclass=async(req,res)=>{
     try {
         const userdata=await Teacher.findById({_id:req.session.teacher_id});
-        res.render("liveclasslist.pug",{teacher:userdata});
+        const classes= await Class.find({teacherid:userdata._id});
+        res.render("liveclasslist.pug",{teacher:userdata,classes:classes});
      } catch (error) {
          console.log(error.message);
      }
 }
+const addclass=async(req,res)=>{
+    try {
+        const Classname=new Class({
+            schoolcode:req.body.schoolcode,
+            schoolname:req.body.schoolname,
+            class:req.body.class,
+            schoolid:req.body.schoolid,
+            section:req.body.section,
+            teacherid:req.body.teacherid,
+            subject:req.body.subject
+        })
+        const classdata= await Classname.save();
+        res.redirect('/liveclasslist');
+    } catch (error) {
+        console.log(error)
+    }
+}
+const loadclass=async(req,res)=>{
+    try {
+        const userdata=await Teacher.findById({_id:req.session.teacher_id});
+        res.render("liveclass.pug",{teacher:userdata});
+     } catch (error) {
+         console.log(error.message);
+     }
+}
+
 module.exports={
     teacherlogin,
     loadteacher,
@@ -174,5 +203,7 @@ module.exports={
     verifyforget,
     forgetpasswordload,
     resetpassword,
-    loadliveclass
+    loadliveclass,
+    addclass,
+    loadclass
 }

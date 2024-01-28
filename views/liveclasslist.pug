@@ -31,17 +31,37 @@ block content
     section#main-section
         div#ncontainer
             button#btn1.tbtn(onclick="changematter1()") My Courses 
-            button#btn2.tbtn(onclick="changematter2()") Homework  
-            button#btn3.tbtn(onclick="changematter3()") Add Class
+            button#btn3.tbtn(onclick="changematter2()") Add Class
         
         div#main-container
             div#matter1.matter 
-                |this is my course matter
+                each val in classes 
+                    div.itembox
+                        li.item #[a(href='localhost:3000/onilne?id='+val.schoolid) #{val.class} #{val.section}]
+                        li.item #[a(href='/onilne?id='+val.schoolid) #{val.subject}]
+                        
+                    
             div#matter2.matter 
-                |this is homework mater 
-            div#matter3.matter 
-                |this is add class mater 
-            
+                div#second
+                    div#container
+                        form(action="/addliveclass", method="post") 
+                            h3 Create Class 
+                            label.form School Name 
+                                input.padding(type="text", name="schoolname",value=teacher.schoolname) 
+                                input.padding(type="hidden", name="teacherid",value=teacher._id)
+                                input.padding(type="hidden", name="schoolid",value=teacher.schoolid)
+                            label.form School Code 
+                                input.padding(type="text", name="schoolcode",value=teacher.schoolcode) 
+                            label.form Class    
+                                input.padding(type="text", name="class")    
+                            label.form Section    
+                                input.padding(type="text", name="section") 
+                            label.form Subject    
+                                input.padding(type="text", name="subject")     
+                            input.final(type="submit",value="Add class")
+
+                    img(src="/static/photos/class.png", alt="school")
+
             
 
 

@@ -42,9 +42,32 @@ const isteacherlogin=async(req,res,next)=>{
         console.log(error.message);
     }
 }
+const isstudentlogout=async(req,res,next)=>{
+    try {
+        if(req.session.student_id){
+            res.redirect('/teacher')
+        }  
+        next()
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+const isstudentlogin=async(req,res,next)=>{
+    try {
+        if(req.session.student_id){}
+        else{
+             res.redirect('/login')
+        }
+        next()
+    } catch (error) {
+        console.log(error.message);
+    }
+}
 module.exports={
     islogin,
     islogout,
     isteacherlogin,
-    isteacherlogout
+    isteacherlogout,
+    isstudentlogin,
+    isstudentlogout
 }

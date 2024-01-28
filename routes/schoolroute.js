@@ -15,6 +15,8 @@ school_route.use(session({secret:config.sessionSecret}));
 
 const schoolController=require("../controllers/schoolcontroller");
 const teacherController=require("../controllers/teachercontroller");
+const studentController=require("../controllers/studentcontroller");
+
 
 // Middleware Connected
 const auth=require('../middleware/auth')
@@ -57,10 +59,28 @@ school_route.get('/teacherlogout',auth.isteacherlogin,auth.islogin,teacherContro
 school_route.get('/liveclasslist',auth.isteacherlogin,teacherController.loadliveclass);
 
 
+
 // post requests 
 school_route.post('/teacherlogin',teacherController.teacherlogin);
 school_route.post('/teacherforget',teacherController.verifyforget);
 school_route.post('/Forget-passwordteacher',teacherController.resetpassword);
+
+
+school_route.post('/addliveclass',teacherController.addclass);
+
+
+
+// Student Usage
+// get requests
+school_route.get('/student',auth.isstudentlogin,studentController.loadstudenthome);
+school_route.get('/Forget-passwordstudent',auth.isstudentlogout,studentController.forgetpasswordload);
+school_route.get('/studentforget',studentController.loadforget);
+school_route.get('/studentlogout',auth.isstudentlogin,studentController.studentlogout);
+
+// post requests
+school_route.post('/studentlogin',studentController.studentlogin);
+school_route.post('/studentforget',studentController.verifyforget);
+school_route.post('/Forget-passwordstudent',studentController.resetpassword);
 
 // export
 module.exports=school_route;
