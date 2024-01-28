@@ -8,7 +8,7 @@ function changematter1() {
 
     }
     if (form1.style.display = "none") {
-        form1.style.display = "block";
+        form1.style.display = "flex";
         form2.style.display = "none";
         form3.style.display = "none";
     }

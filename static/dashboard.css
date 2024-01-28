@@ -55,11 +55,88 @@ body{
 }
 .matter{
     display: flex;
-    height: 25rem;
     margin: 15px 40px;
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
+}
+
+/* Add Class */
+#container{
+    display: flex;
+    height: auto;
+    text-align: center;
+    width:40%; 
+    background-color: transparent;
+    margin: 30px 80px;
+    box-shadow: 19px 16px 19px 14px grey;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#matter2 h3{
+    margin: 5px 7px;
+    font-size: 1.7rem;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;
+    font-family:Arial, Helvetica, sans-serif;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.final{
+    margin: auto;
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 6px;
+}
+
+#second{
+    display: flex;
+}
+#second img{
+    height: 25rem;
+}
+#second img:hover{
+    filter:contrast(1.3);
+}
+/* Show Class */
+#matter1{
+    margin: 1rem;
+    padding: 1rem 1.3rem;
+    background-color: rgba(51, 255, 0, 0.842);
+    flex-wrap: wrap;
+}
+
+.itembox{
+    border: 2px solid black;
+    margin: 1rem;
+    padding:1rem 4.4rem;
+    background-color: white;
+    cursor: pointer;
+}
+.item{
+    padding: 4px 6px;
+    margin: 4px 7px;
+}
+.itembox li{
+    font-size: 1.3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    list-style: none;
+}
+.itembox li a{
+    text-decoration: none;
+
 }
 #matter2,#matter3{
     display: none;
