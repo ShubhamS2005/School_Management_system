@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+      meta(charset='utf-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1')
+      title Best Platform for Onlne School Mangement | GyanMandir 
+block scripts
+
+
+block style 
+    style  
+        include ../static/teacher.css
+        include ../static/class.css
+
+
+
+block content
+    nav#navbar
+        ul
+            li 
+                img(src="/static/photos/school_building.png", alt="school")
+            li 
+                h3 #{teacher.schoolname}
+        div#side-bar
+            ul
+                li Session: #{teacher.session_start}-#{teacher.session_end}
+                li #[a(href='/setting') Settings]
+                li #[a(href='/teacherlogout') Logout ]
+            
+    
+    section#first-section 
+        p #{classes} #{section} Dashboard 
+       
+    section#section
+        div#main-container 
+            table
+                tr#htr 
+                    th Name 
+                    th Email
+                    th Admission Number    
+                    th Phone
+                    th Assign Homework
+                each val in students
+                    tr#tr
+                        if classes==val.class
+                            if section==val.section
+                                td.td= val.name
+                                td.td= val.email 
+                                td.td= val.admission_no
+                                td.td= val.phone
+                                td.td 
+                                     li #[a(href='/homework?stuid='+val._id) Homework]
+
+
+
+
+        
+
+
+        
+    
+
+
+    

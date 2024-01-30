@@ -29,6 +29,7 @@ const teacherlogin=async(req,res)=>{
             if(passwordmatch){
                 if(schoolcode===teacherdata.schoolcode){
                     req.session.teacher_id=teacherdata._id;
+                    req.session.schoolid=teacherdata.schoolid;
                     res.redirect('/teacher')
                 }
                 else{
@@ -194,7 +195,25 @@ const loadclass=async(req,res)=>{
          console.log(error.message);
      }
 }
-
+const classes=async(req,res)=>{
+    try {
+        const Class=req.query.class;
+        const section=req.query.section;
+        const userdata=await Teacher.findById({_id:req.session.teacher_id});
+        const student=await Student.find({
+            $and:[
+                {
+                schoolid:req.session.schoolid
+                }
+            ]
+        });
+        
+         
+        res.render("class.pug",{teacher:userdata,students:student,classes:Class,section:section});
+     }catch (error) {
+         console.log(error.message);
+     }
+}
 module.exports={
     teacherlogin,
     loadteacher,
@@ -205,5 +224,6 @@ module.exports={
     resetpassword,
     loadliveclass,
     addclass,
-    loadclass
+    loadclass,
+    classes
 }

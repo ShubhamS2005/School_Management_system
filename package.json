@@ -4,8 +4,7 @@
   "description": "this is a project made for school managment",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js && node server.js",
-
+    "start": "nodemon app.js",
     "test": "npm run all"
   },
   "author": "Shubham",

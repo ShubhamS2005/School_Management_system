@@ -37,8 +37,8 @@ block content
             div#matter1.matter 
                 each val in classes 
                     div.itembox
-                        li.item #[a(href='localhost:3000/onilne?id='+val.schoolid) #{val.class} #{val.section}]
-                        li.item #[a(href='/onilne?id='+val.schoolid) #{val.subject}]
+                        li.item #[a(href='/class?class='+val.class+'&'+'section='+val.section) #{val.class} #{val.section}]
+                        li.item #[a(href='/class?class='+val.class) #{val.subject}]
                         
                     
             div#matter2.matter 
