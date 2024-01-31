@@ -57,6 +57,8 @@ school_route.get('/Forget-passwordteacher',auth.isteacherlogout,teacherControlle
 school_route.get('/teacherforget',teacherController.loadforget);
 school_route.get('/teacherlogout',auth.isteacherlogin,auth.islogin,teacherController.teacherlogout);
 school_route.get('/liveclasslist',auth.isteacherlogin,teacherController.loadliveclass);
+school_route.get('/class',auth.isteacherlogin,teacherController.classes);
+
 
 
 
